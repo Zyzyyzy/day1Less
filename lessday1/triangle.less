@@ -1,0 +1,46 @@
+ul {
+    list-style: none;
+
+    li {
+        float: left;
+        width: 0;
+        height: 0;
+    }
+}
+
+.triangle(@size, @color, @fx) {
+    border: @size solid transparent;
+    border-@{fx}: @size solid @color;
+}
+
+li:nth-child(1) {
+    .triangle(30px, red, right)
+}
+
+li:nth-child(2) {
+    .triangle(15px, blue, right)
+}
+
+li:nth-child(3) {
+    .triangle(30px, red, top)
+}
+
+li:nth-child(4) {
+    .triangle(15px, black, top)
+}
+
+li:nth-child(5) {
+    .triangle(30px, red, left)
+}
+
+li:nth-child(6) {
+    .triangle(15px, blue, left)
+}
+
+li:nth-child(7) {
+    .triangle(30px, red, bottom)
+}
+
+li:nth-child(8) {
+    .triangle(15px, blue, bottom)
+}

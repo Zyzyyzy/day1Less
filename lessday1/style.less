@@ -1,0 +1,137 @@
+div {
+    p {
+        color: red;
+    }
+}
+
+@divname: .box;
+
+@{divname} {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+}
+
+@names: '这是before内容';
+@var: names;
+
+.box::before {
+    content: @@var;
+}
+
+@color: #FF0000-#550000;
+@w: 1000-200px;
+@text: '这是before';
+@vart: text;
+
+h1,
+h2,
+h3,
+h1::before,
+h2::before,
+h3::before {
+    content: @@vart;
+    width: @w;
+    color: @color;
+    background-color: skyblue;
+}
+
+// ul {
+//     list-style: none;
+//     padding: 10px;
+//     background-color: pink;
+
+//     li {
+//         width: 800px;
+//         background-color: skyblue;
+//         cursor: pointer;
+
+//         &:hover {
+//             font-size: 30px;
+//             background-color: limegreen;
+//             transition: all .5s;
+//         }
+//     }
+// }
+
+.f {
+    width: 150px;
+    height: 150px;
+    background-color: lightsalmon;
+
+    .s {
+        width: 100px;
+        height: 50px;
+        background-color: limegreen;
+
+        .gf & {
+            width: 50px;
+            height: 50px;
+            background-color: slateblue;
+        }
+    }
+}
+
+div,
+p,
+a {
+    & & {
+        color: red;
+    }
+}
+
+.box1 {
+    height: 100px;
+    width: 200px;
+    margin: 0 auto;
+
+    p {
+        font-size: 30px;
+        color: red;
+    }
+}
+
+.f1:extend(.box1):extend(.box1 p) {
+    background-color: slateblue;
+}
+
+.f2:extend(.box1):extend(.box1 p) {
+    background-color: lightcoral;
+}
+
+.mixi {
+    width: 500px;
+    height: 100px;
+    margin: 10px auto;
+}
+
+.boxd1 {
+    .mixi;
+    background-color: lightcoral;
+}
+
+.boxd2 {
+    .mixi;
+    background-color: slateblue;
+}
+
+.mixin(@index) when(@index<6) {
+    ul li:nth-child(@{index}) {
+        width: 50px*@index;
+    }
+
+    .mixin(@index+1);
+}
+
+.mixin(1);
+
+ul {
+    list-style: none;
+
+    li {
+        height: 20px;
+        text-align: center;
+        background-color: slateblue;
+        margin: 0 auto;
+    }
+}

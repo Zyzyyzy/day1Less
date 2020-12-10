@@ -1,0 +1,108 @@
+div p {
+  color: red;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: skyblue;
+}
+.box::before {
+  content: '这是before内容';
+}
+h1,
+h2,
+h3,
+h1::before,
+h2::before,
+h3::before {
+  content: '这是before';
+  width: 800px;
+  color: #aa0000;
+  background-color: skyblue;
+}
+.f {
+  width: 150px;
+  height: 150px;
+  background-color: lightsalmon;
+}
+.f .s {
+  width: 100px;
+  height: 50px;
+  background-color: limegreen;
+}
+.gf .f .s {
+  width: 50px;
+  height: 50px;
+  background-color: slateblue;
+}
+div div,
+div p,
+div a,
+p div,
+p p,
+p a,
+a div,
+a p,
+a a {
+  color: red;
+}
+.box1,
+.f1,
+.f2 {
+  height: 100px;
+  width: 200px;
+  margin: 0 auto;
+}
+.box1 p,
+.f1,
+.f2 {
+  font-size: 30px;
+  color: red;
+}
+.f1 {
+  background-color: slateblue;
+}
+.f2 {
+  background-color: lightcoral;
+}
+.mixi {
+  width: 500px;
+  height: 100px;
+  margin: 10px auto;
+}
+.boxd1 {
+  width: 500px;
+  height: 100px;
+  margin: 10px auto;
+  background-color: lightcoral;
+}
+.boxd2 {
+  width: 500px;
+  height: 100px;
+  margin: 10px auto;
+  background-color: slateblue;
+}
+ul li:nth-child(1) {
+  width: 50px;
+}
+ul li:nth-child(2) {
+  width: 100px;
+}
+ul li:nth-child(3) {
+  width: 150px;
+}
+ul li:nth-child(4) {
+  width: 200px;
+}
+ul li:nth-child(5) {
+  width: 250px;
+}
+ul {
+  list-style: none;
+}
+ul li {
+  height: 20px;
+  text-align: center;
+  background-color: slateblue;
+  margin: 0 auto;
+}
